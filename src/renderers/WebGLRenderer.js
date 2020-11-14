@@ -676,6 +676,10 @@ function WebGLRenderer( parameters ) {
 		if ( object.hasUvs && ! buffers.uv ) buffers.uv = _gl.createBuffer();
 		if ( object.hasColors && ! buffers.color ) buffers.color = _gl.createBuffer();
 		if ( object.hasSphereProps1 && ! buffers.sphereProps1 ) buffers.sphereProps1 = _gl.createBuffer();
+		if ( object.hasSphereProps2 && ! buffers.sphereProps2 ) buffers.sphereProps2 = _gl.createBuffer();
+		if ( object.hasSphereProps3 && ! buffers.sphereProps3 ) buffers.sphereProps3 = _gl.createBuffer();
+		if ( object.hasSphereProps4 && ! buffers.sphereProps4 ) buffers.sphereProps4 = _gl.createBuffer();
+		if ( object.hasSphereProps5 && ! buffers.sphereProps5 ) buffers.sphereProps5 = _gl.createBuffer();
 
 		const programAttributes = program.getAttributes();
 
@@ -726,6 +730,42 @@ function WebGLRenderer( parameters ) {
 
 			bindingStates.enableAttribute( programAttributes.sphereProps1 );
 			_gl.vertexAttribPointer( programAttributes.sphereProps1, 3, _gl.FLOAT, false, 0, 0 );
+		}
+
+		if( object.hasSphereProps2 ) {
+
+			_gl.bindBuffer( _gl.ARRAY_BUFFER, buffers.sphereProps2 );
+			_gl.bufferData( _gl.ARRAY_BUFFER, object.sphereProps2, _gl.DYNAMIC_DRAW );
+
+			bindingStates.enableAttribute( programAttributes.sphereProps2 );
+			_gl.vertexAttribPointer( programAttributes.sphereProps2, 3, _gl.FLOAT, false, 0, 0 );
+		}
+
+		if( object.hasSphereProps3 ) {
+
+			_gl.bindBuffer( _gl.ARRAY_BUFFER, buffers.sphereProps3 );
+			_gl.bufferData( _gl.ARRAY_BUFFER, object.sphereProps3, _gl.DYNAMIC_DRAW );
+
+			bindingStates.enableAttribute( programAttributes.sphereProps3 );
+			_gl.vertexAttribPointer( programAttributes.sphereProps3, 3, _gl.FLOAT, false, 0, 0 );
+		}
+
+		if( object.hasSphereProps4 ) {
+
+			_gl.bindBuffer( _gl.ARRAY_BUFFER, buffers.sphereProps4 );
+			_gl.bufferData( _gl.ARRAY_BUFFER, object.sphereProps4, _gl.DYNAMIC_DRAW );
+
+			bindingStates.enableAttribute( programAttributes.sphereProps4 );
+			_gl.vertexAttribPointer( programAttributes.sphereProps4, 3, _gl.FLOAT, false, 0, 0 );
+		}
+
+		if( object.hasSphereProps5 ) {
+
+			_gl.bindBuffer( _gl.ARRAY_BUFFER, buffers.sphereProps5 );
+			_gl.bufferData( _gl.ARRAY_BUFFER, object.sphereProps5, _gl.DYNAMIC_DRAW );
+
+			bindingStates.enableAttribute( programAttributes.sphereProps5 );
+			_gl.vertexAttribPointer( programAttributes.sphereProps5, 3, _gl.FLOAT, false, 0, 0 );
 		}
 
 		bindingStates.disableUnusedAttributes();
