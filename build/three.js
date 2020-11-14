@@ -17697,6 +17697,10 @@
 			if (object.hasUvs && !buffers.uv) buffers.uv = _gl.createBuffer();
 			if (object.hasColors && !buffers.color) buffers.color = _gl.createBuffer();
 			if (object.hasSphereProps1 && !buffers.sphereProps1) buffers.sphereProps1 = _gl.createBuffer();
+			if (object.hasSphereProps2 && !buffers.sphereProps2) buffers.sphereProps2 = _gl.createBuffer();
+			if (object.hasSphereProps3 && !buffers.sphereProps3) buffers.sphereProps3 = _gl.createBuffer();
+			if (object.hasSphereProps4 && !buffers.sphereProps4) buffers.sphereProps4 = _gl.createBuffer();
+			if (object.hasSphereProps5 && !buffers.sphereProps5) buffers.sphereProps5 = _gl.createBuffer();
 			var programAttributes = program.getAttributes();
 
 			if (object.hasPositions) {
@@ -17747,6 +17751,46 @@
 				bindingStates.enableAttribute(programAttributes.sphereProps1);
 
 				_gl.vertexAttribPointer(programAttributes.sphereProps1, 3, 5126, false, 0, 0);
+			}
+
+			if (object.hasSphereProps2) {
+				_gl.bindBuffer(34962, buffers.sphereProps2);
+
+				_gl.bufferData(34962, object.sphereProps2, 35048);
+
+				bindingStates.enableAttribute(programAttributes.sphereProps2);
+
+				_gl.vertexAttribPointer(programAttributes.sphereProps2, 3, 5126, false, 0, 0);
+			}
+
+			if (object.hasSphereProps3) {
+				_gl.bindBuffer(34962, buffers.sphereProps3);
+
+				_gl.bufferData(34962, object.sphereProps3, 35048);
+
+				bindingStates.enableAttribute(programAttributes.sphereProps3);
+
+				_gl.vertexAttribPointer(programAttributes.sphereProps3, 3, 5126, false, 0, 0);
+			}
+
+			if (object.hasSphereProps4) {
+				_gl.bindBuffer(34962, buffers.sphereProps4);
+
+				_gl.bufferData(34962, object.sphereProps4, 35048);
+
+				bindingStates.enableAttribute(programAttributes.sphereProps4);
+
+				_gl.vertexAttribPointer(programAttributes.sphereProps4, 3, 5126, false, 0, 0);
+			}
+
+			if (object.hasSphereProps5) {
+				_gl.bindBuffer(34962, buffers.sphereProps5);
+
+				_gl.bufferData(34962, object.sphereProps5, 35048);
+
+				bindingStates.enableAttribute(programAttributes.sphereProps5);
+
+				_gl.vertexAttribPointer(programAttributes.sphereProps5, 3, 5126, false, 0, 0);
 			}
 
 			bindingStates.disableUnusedAttributes();
