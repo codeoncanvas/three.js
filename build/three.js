@@ -17696,6 +17696,7 @@
 			if (object.hasNormals && !buffers.normal) buffers.normal = _gl.createBuffer();
 			if (object.hasUvs && !buffers.uv) buffers.uv = _gl.createBuffer();
 			if (object.hasColors && !buffers.color) buffers.color = _gl.createBuffer();
+			if (object.hasSphereProps1 && !buffers.sphereProps1) buffers.sphereProps1 = _gl.createBuffer();
 			var programAttributes = program.getAttributes();
 
 			if (object.hasPositions) {
@@ -17736,6 +17737,16 @@
 				bindingStates.enableAttribute(programAttributes.color);
 
 				_gl.vertexAttribPointer(programAttributes.color, 3, 5126, false, 0, 0);
+			}
+
+			if (object.hasSphereProps1) {
+				_gl.bindBuffer(34962, buffers.sphereProps1);
+
+				_gl.bufferData(34962, object.sphereProps1, 35048);
+
+				bindingStates.enableAttribute(programAttributes.sphereProps1);
+
+				_gl.vertexAttribPointer(programAttributes.sphereProps1, 3, 5126, false, 0, 0);
 			}
 
 			bindingStates.disableUnusedAttributes();
